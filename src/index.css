@@ -5,3 +5,14 @@
 :root {
     @apply text-center text-black dark:text-white;
 }
+body {
+    @apply bg-white dark:bg-dark-secondary;
+}
+
+input {
+    @apply bg-white dark:bg-dark-primary;
+}
+
+button {
+    @apply p-2 bg-primary dark:bg-dark-primary text-black dark:text-white m-2 rounded-md hover:rounded-xl transition-all;
+}

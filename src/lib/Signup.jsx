@@ -29,15 +29,14 @@ export default function Signup() {
     }
 
     return (
-        <div>
+        <div className="flex flex-col bg-primary dark:bg-dark-primary h-auto w-64 rounded-lg m-4">
+            <h1 className="font-bold text-xl m-2 p-4">Login / Signup!</h1>
             <form onSubmit={(event) => event.preventDefault()}>
-                <input type="text" placeholder="Username" onChange={(event) => setUsername(event.target.value)} />
-                <input type="text" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
+                <input className="rounded-md p-1 m-2" type="text" placeholder="Username" onChange={(event) => setUsername(event.target.value)} />
+                <input className="rounded-md p-1 m-2" type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                 <button onClick={signup}>Sign Up!</button>
                 <button onClick={login}>Login</button>
             </form>
-            <p>{username}</p>
-            <p>{password}</p>
         </div>
     )
 }

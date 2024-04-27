@@ -8,7 +8,7 @@ function Configitems(){
     useEffect(() => {
         const fetchData = async () => {
             const result = await pb.collection('config_entries').getList(1, 20, {
-                filter: ''
+                sort: 'Likes',
             });
             setConfigItems(result.items);
         };
@@ -16,7 +16,8 @@ function Configitems(){
     }, []);
 
     return (
-        <>
+        <div className='flex flex-wrap flex-row w-screen h-auto my-12'>
+            <h1 className='text-center text-2xl font-bold w-full'>Configs by more Players!</h1>
             {configItems.map((item, index) => (
                 <ConfigPreview 
                 thumbnail={configItems[index].thumbnail}
@@ -26,10 +27,12 @@ function Configitems(){
                 likes={configItems[index].Likes}
                 id={configItems[index].id}
                 collectionid={configItems[index].collectionId}
+                title={configItems[index].name}
+                file={configItems[index].config_file_zip}
                 key={index}
             />
             ))}
-        </>
+        </div>
     )
 }
 

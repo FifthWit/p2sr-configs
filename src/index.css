@@ -10,7 +10,7 @@ body {
 }
 
 input {
-    @apply bg-secondary dark:bg-dark-secondary;
+    @apply bg-secondary dark:bg-dark-secondary p-2 outline-none focus:outline-none;
 }
 
 button {

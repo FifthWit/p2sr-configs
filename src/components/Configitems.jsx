@@ -8,9 +8,10 @@ function Configitems(){
     useEffect(() => {
         const fetchData = async () => {
             const result = await pb.collection('config_entries').getList(1, 20, {
-                sort: 'Likes',
+                filter: ''
             });
-            setConfigItems(result.items);
+            const sortedItems = result.items.sort((a, b) => b.Likes - a.Likes);
+            setConfigItems(sortedItems);
         };
         fetchData();
     }, []);

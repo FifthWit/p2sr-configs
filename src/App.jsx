@@ -6,7 +6,11 @@ import './App.css'
 function App() {
   return (
     <>
-      <Signup />
+    <div className='w-screen py-20 bg-primary dark:bg-dark-primary text-right'>
+        <div className='bg-secondary dark:bg-dark-secondary py-12 text-center'>
+          <Signup />
+        </div>
+      </div>
       <Configitems />
     </>
   )

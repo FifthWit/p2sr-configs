@@ -10,9 +10,9 @@ body {
 }
 
 input {
-    @apply bg-white dark:bg-dark-primary;
+    @apply bg-secondary dark:bg-dark-secondary;
 }
 
 button {
-    @apply p-2 bg-primary dark:bg-dark-primary text-black dark:text-white m-2 rounded-md hover:rounded-xl transition-all;
+    @apply p-2 bg-secondary dark:bg-dark-secondary text-black dark:text-white m-2 rounded-md hover:rounded-xl transition-all;
 }

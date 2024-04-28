@@ -16,3 +16,27 @@ input {
 button {
     @apply p-2 bg-secondary dark:bg-dark-secondary text-black dark:text-white m-2 rounded-md hover:rounded-xl transition-all;
 }
+
+.opaque {
+    @apply text-base text-gray-400;
+}
+
+h1 {
+    @apply font-bold text-xl;
+}
+
+.thumbnail {
+    @apply rounded-t-lg group-hover:rounded-t-3xl transition-all aspect-video;
+}
+
+.config-preview-content {
+    @apply m-4 items-center justify-center;
+}
+
+h2 {
+    @apply font-semibold text-lg;
+}
+
+button.special {
+    @apply rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 transition-all;
+}

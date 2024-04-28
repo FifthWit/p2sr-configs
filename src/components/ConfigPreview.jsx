@@ -33,21 +33,21 @@ export default function ConfigPreview({ thumbnail, description, type,  player, l
     return (
         <div className="bg-primary dark:bg-dark-primary w-56 h-76 m-4 rounded-lg hover:rounded-3xl transition-all group shadow-xl flex flex-col">
             <img src={`${pburl}/api/files/${collectionid}/${id}/${thumbnail}`}
-            alt="" className="rounded-t-lg group-hover:rounded-t-3xl transition-all aspect-video"/>
-            <div className="m-4 items-center justify-center">
-                <h1 className='font-bold text-xl'>{title}</h1>
-                <h1 className="font-semibold">{type} theme</h1>
-                <h1>By {player}</h1>
-                <p className="text-gray-400">{description}</p>
+            alt="" className="thumbnail"/>
+            <div className="config-preview-content">
+                <h1>{title}</h1>
+                <h2>{type} theme</h2>
+                <h2>By {player}</h2>
+                <p className="opaque">{description}</p>
                 <p>Likes: {Likes}</p>
                 {pb.authStore && pb.authStore.model && pb.authStore.model.username &&
                     (Liked === false ? (
-                        <button onClick={() => Like(true)} className="rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 transition-all">Like</button>
+                        <button onClick={() => Like(true)} className="special">Like</button>
                     ) : (
-                        <button onClick={() => Like(false)} className="rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 transition-all">Unlike</button>
+                        <button onClick={() => Like(false)} className="special">Unlike</button>
                     ))
                 }
-                <button onClick={downloadfile} className="rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 transition-all">Download</button>
+                <button onClick={downloadfile} className="special">Download</button>
             </div>
         </div>
     )

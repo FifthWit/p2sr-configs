@@ -18,7 +18,7 @@ function Configitems(){
 
     return (
         <div className='flex flex-wrap flex-row w-screen h-auto my-12'>
-            <h1 className='text-center text-2xl font-bold w-full'>Configs by more Players!</h1>
+            <h1 className='text-center w-full'>Configs by more Players!</h1>
             {configItems.map((item, index) => (
                 <ConfigPreview 
                 thumbnail={configItems[index].thumbnail}

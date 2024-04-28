@@ -65,7 +65,7 @@ export default function Signup() {
             (sorry but you have to reload the page if you want to upload
             configs, will hopefully fix later)
           </p>
-          <button onClick={signout}>Signout</button>
+          <button onClick={signout} className="special">Signout</button>
         </div>
       )}
     </>

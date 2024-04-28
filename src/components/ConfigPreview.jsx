@@ -1,4 +1,4 @@
-const pburl = 'http://127.0.0.1:8090';
+const pburl = import.meta.env.VITE_POCKETBASE_URL;
 import pb from '../lib/pocketbase';
 import { useState } from "react";
 

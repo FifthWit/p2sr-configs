@@ -1,4 +1,4 @@
 import PocketBase from 'pocketbase';
 
-const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL);
+const pb = new PocketBase("http://configs.fifthwit.tech");
 export default pb

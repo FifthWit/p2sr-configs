@@ -1,5 +1,6 @@
 import { useState } from "react";
 import pb from "./pocketbase";
+
 export default function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -36,7 +37,7 @@ export default function Signup() {
       {!pb.authStore.model ||
       !pb.authStore.model.username ||
       pb.authStore.model.username === "" ? (
-        <div className="flex flex-col bg-primary dark:bg-dark-primary h-auto w-64 rounded-lg m-4">
+        <div style={{ transform: "translate(-50%, -50%)" }} className="z-40 flex flex-col bg-primary dark:bg-dark-primary h-auto w-64 rounded-lg m-4 fixed left-1/2 top-1/2">
           <h1 className="font-bold text-xl m-2 p-4">Login / Signup!</h1>
           <form onSubmit={(event) => event.preventDefault()}>
             <input
@@ -68,6 +69,7 @@ export default function Signup() {
           <button onClick={signout} className="special">Signout</button>
         </div>
       )}
+      <div className="w-screen h-screen fixed bg-dark-transparent top-0 left-0 z-30"></div>
     </>
   );
 }

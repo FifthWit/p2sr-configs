@@ -1,4 +1,4 @@
-const pburl = import.meta.env.VITE_POCKETBASE_URL;
+const pburl = "http://configs.fifthwit.tech";
 import pb from '../lib/pocketbase';
 import { useState } from "react";
 
@@ -31,7 +31,7 @@ export default function ConfigPreview({ thumbnail, description, type,  player, l
     const [Liked, setLiked] = useState(false);
     const [Likes, setLikes] = useState(likes);
     return (
-        <div className="bg-primary dark:bg-dark-primary w-56 h-76 m-4 rounded-lg hover:rounded-3xl transition-all group shadow-xl flex flex-col">
+        <div className="bg-primary dark:bg-dark-primary w-56 h-76 m-4 rounded-lg transition-all group shadow-xl flex flex-col">
             <img src={`${pburl}/api/files/${collectionid}/${id}/${thumbnail}`}
             alt="" className="thumbnail"/>
             <div className="config-preview-content">

@@ -57,18 +57,20 @@ export default function Signup() {
           </form>
         </div>
       ) : (
-        <div className="flex flex-col bg-primary dark:bg-dark-primary h-auto w-64 rounded-lg m-4 py-8">
-          <h1 className="font-bold text-xl">
-            Logged in as{" "}
-            {pb.authStore && pb.authStore.model && pb.authStore.model.username}!
-          </h1>
-          <p>
-            (sorry but you have to reload the page if you want to upload
-            configs, will hopefully fix later)
-          </p>
-          <button onClick={signout} className="special">Signout</button>
-        </div>
-      )}
+        // <div className="flex flex-col bg-primary dark:bg-dark-primary h-auto w-64 rounded-lg m-4 py-8">
+        //   <h1 className="font-bold text-xl">
+        //     Logged in as{" "}
+        //     {pb.authStore && pb.authStore.model && pb.authStore.model.username}!
+        //   </h1>
+        //   <p>
+        //     (sorry but you have to reload the page if you want to upload
+        //     configs, will hopefully fix later)
+        //   </p>
+        //   <button onClick={signout} className="special">Signout</button>
+          // </div>
+          <div></div>
+      )
+      }
       <div className="w-screen h-screen fixed bg-dark-transparent top-0 left-0 z-30"></div>
     </>
   );

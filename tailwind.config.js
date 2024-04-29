@@ -13,6 +13,7 @@ export default {
         "dark-primary": "#17171A",
         "dark-primary-alt": "#303036",
         "dark-secondary": "#111112",
+        "dark-secondary-alt": "#1A1A1D",
         "dark": "#16151D",
         "dark-transparent": "#00000080"
       }

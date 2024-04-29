@@ -1,4 +1,4 @@
-const pburl = "http://configs.fifthwit.tech";
+const pburl = import.meta.env.VITE_pocketbaseurl;
 import pb from '../lib/pocketbase';
 import { useState } from "react";
 

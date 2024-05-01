@@ -1,5 +1,3 @@
-import React from "react";
-
 const CreateConfig = () => {
     const ghostProximityFade = document.querySelector("#ghostProximityFade");
 
@@ -25,6 +23,7 @@ ghost_proximity_fade ${ghostProximityFade.value}
 
     return (
         <div>
+            <h1>This is in BETA, would not recommend using until wolf finishes</h1>
             <input id="ghostProximityFade"/>
             <button onClick={handleDownload}>Download</button>
         </div>

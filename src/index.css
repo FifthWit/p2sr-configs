@@ -10,7 +10,7 @@ body {
 }
 
 input {
-    @apply bg-secondary dark:bg-dark-secondary p-2 outline-none focus:outline-none;
+    @apply bg-white dark:bg-dark-secondary p-2 outline-none focus:outline-none;
 }
 
 button {
@@ -40,6 +40,7 @@ h2 {
 button.special {
     @apply rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 transition-all;
 }
+
 
 .barlow-condensed-thin {
     font-family: "Barlow Condensed", sans-serif;

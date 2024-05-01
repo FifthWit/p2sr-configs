@@ -5,7 +5,6 @@ import logo from "../lib/imgs/logo.png";
 import search from "../lib/imgs/search.svg";
 import browse from "../lib/imgs/browse.svg";
 import create from "../lib/imgs/create.svg";
-import pfp from "../lib/imgs/dog.webp";
 import logout from "../lib/imgs/logout.svg";
 
 function Icon({ src, children, onclick }){
@@ -27,53 +26,44 @@ export default function Header({ configItemsTab, createConfigsTab, homeTab }) {
         window.location.reload();
     }
 
-    useEffect(() => {
-        if (username !== null) {
-            document.querySelector("#loginBtn").className = "hidden"
-        } else {
-            document.querySelector("#welcomeMsg").className = "hidden"
-        }
-    })
 
     const toggleSignIn = () => {
         setShowSignIn(!showSignIn);
     };
 
     return (
-        <div className='barlow-condensed-semibold w-screen h-24 bg-dark-primary border-b-4 border-b-secondary fixed z-50 top-0 flex'>
+        <div className='barlow-condensed-semibold w-screen h-24 bg-white dark:bg-dark-primary border-b-4 border-b-secondary fixed z-50 top-0 flex'>
             <div className='flex items-center w-full z-30'>
                 <div onClick={homeTab} className='h-16 flex ml-10 align-middle items-center select-none cursor-pointer'>
                     <div className='aspect-square h-12 w-12'> {/* this code is fucked why did u write it wolf */}
                         <img className='' src={logo} />
                     </div>
-                    <span className='barlow-condensed-semibold text-4xl uppercase hidden md:block'>P2SR CONFIGS</span>
+                    <span className='barlow-condensed-semibold text-4xl uppercase hidden md:block dark:text-white text-black'>P2SR CONFIGS</span>
                 </div>
                 <div className='w-96 ml-7 rounded-xl overflow-hidden bg-dark-secondary hidden sm:flex'>
-                    <img className='ml-2 w-8' src={search}></img>
-                    <input placeholder='Search configs' className='barlow-condensed-semibold text-xl w-full placeholder:text-dark-primary-alt' />
+                    <input placeholder='Search configs' className='barlow-condensed-semibold text-xl w-full placeholder:text-gray-400 placeholder:dark:text-dark-primary-alt bg-gray-200 dark:bg-dark-secondary' />
                 </div>
                 <div style={{width: "500px"}} className='text-2xl uppercase ml-10 flex'>
                     <Icon onclick={configItemsTab} src={browse}>Browse Configs</Icon>
                     <Icon onclick={createConfigsTab} src={create}>Create Configs</Icon>
                 </div>
 
-                <div id='loginBtn' className='flex ml-auto mr-10 cursor-pointer'>
+                <div id='loginBtn' className={`${username !== null ? 'hidden' : ''} flex ml-auto mr-10 cursor-pointer`}>
                     <span className='text-3xl' onClick={toggleSignIn}>Log In</span>
                 </div>
 
-                <div className='flex h-full ml-auto cursor-pointer group'>
+                <div className={`flex h-full ml-auto cursor-pointer group ${username == null ? 'hidden' : ''}`}>
                     <div className='flex items-center mr-10'>
-                        <div className="text-right">
+                        <div className="text-center">
                             <span className='barlow-condensed-extralight text-xl'>Welcome Back!</span><br/>
                             <span className='barlow-condensed-medium text-3xl'>{username}</span>
-                            <div className='absolute text-left right-10 top-20 w-40 bg-dark-secondary-alt text-xl transition-all scale-0 group-hover:scale-100 origin-top'>
+                            <div className={`absolute text-left right-10 top-20 w-28 bg-dark-secondary-alt text-xl transition-all scale-0 group-hover:scale-100 origin-top`}>
                                 <div onClick={signout} className='w-full p-2 cursor-pointer flex transition-all'>
                                     <span>Log Out</span>
                                     <img className='ml-auto' src={ logout } />
                                 </div>
                             </div>
                         </div>
-                        <img style={{height: "70px"}} className='rounded-full ml-3' src={pfp}/>
                     </div>
                 </div>
             </div>

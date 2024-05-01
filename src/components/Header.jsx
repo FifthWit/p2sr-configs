@@ -8,6 +8,15 @@ import create from "../lib/imgs/create.svg";
 import pfp from "../lib/imgs/dog.webp";
 import logout from "../lib/imgs/logout.svg";
 
+function Icon({ src, children, onclick }){
+    return (
+    <div onClick={onclick} className='flex justify-center items-center w-full cursor-pointer select-none'>
+        <img src={src} className='sm:hidden xs:hidden' />
+        <span className='ml-2'>{children}</span>
+    </div>
+    )
+}
+
 export default function Header({ configItemsTab, createConfigsTab, homeTab }) {
     const [showSignIn, setShowSignIn] = useState(false);
 
@@ -56,14 +65,8 @@ export default function Header({ configItemsTab, createConfigsTab, homeTab }) {
                     <input placeholder='Search configs' className='barlow-condensed-semibold text-xl w-full placeholder:text-dark-primary-alt'></input>
                 </div>
                 <div style={{width: "500px"}} className='text-2xl uppercase ml-10 flex'>
-                    <div onClick={configItemsTab} className='flex justify-center items-center w-full cursor-pointer select-none'>
-                        <img src={browse}></img>
-                        <span className='ml-2'>Browse Configs</span>
-                    </div>
-                    <div onClick={createConfigsTab} className='flex justify-center items-center w-full cursor-pointer select-none'>
-                        <img src={create}></img>
-                        <span className='ml-2'>Create Configs</span>
-                    </div>
+                    <Icon onclick={configItemsTab} src={browse}>Browse Configs</Icon>
+                    <Icon onclick={createConfigsTab} src={create}>Create Configs</Icon>
                 </div>
 
                 <div id='loginBtn' className='flex ml-auto mr-10 cursor-pointer'>

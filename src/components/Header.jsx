@@ -11,7 +11,7 @@ import logout from "../lib/imgs/logout.svg";
 function Icon({ src, children, onclick }){
     return (
     <div onClick={onclick} className='flex justify-center items-center w-full cursor-pointer select-none'>
-        <img src={src} className='sm:hidden xs:hidden' />
+        <img src={src} className='hidden md:block' />
         <span className='ml-2'>{children}</span>
     </div>
     )
@@ -57,12 +57,14 @@ export default function Header({ configItemsTab, createConfigsTab, homeTab }) {
         <div className='barlow-condensed-semibold w-screen h-24 bg-dark-primary border-b-4 border-b-secondary fixed z-50 top-0 flex'>
             <div className='flex items-center w-full z-30'>
                 <div onClick={homeTab} className='h-16 flex ml-10 align-middle items-center select-none cursor-pointer'>
-                    <img className='h-full' src={logo}></img>
-                    <span className='barlow-condensed-semibold text-4xl uppercase'>P2SR CONFIGS</span>
+                    <div className='aspect-square h-12 w-12'> {/* this code is fucked why did u write it wolf */}
+                        <img className='' src={logo} />
+                    </div>
+                    <span className='barlow-condensed-semibold text-4xl uppercase hidden md:block'>P2SR CONFIGS</span>
                 </div>
-                <div className='w-96 ml-7 rounded-xl overflow-hidden flex bg-dark-secondary'>
+                <div className='w-96 ml-7 rounded-xl overflow-hidden bg-dark-secondary hidden sm:flex'>
                     <img className='ml-2 w-8' src={search}></img>
-                    <input placeholder='Search configs' className='barlow-condensed-semibold text-xl w-full placeholder:text-dark-primary-alt'></input>
+                    <input placeholder='Search configs' className='barlow-condensed-semibold text-xl w-full placeholder:text-dark-primary-alt' />
                 </div>
                 <div style={{width: "500px"}} className='text-2xl uppercase ml-10 flex'>
                     <Icon onclick={configItemsTab} src={browse}>Browse Configs</Icon>

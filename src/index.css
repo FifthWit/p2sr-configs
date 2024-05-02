@@ -9,6 +9,10 @@ body {
     @apply bg-white dark:bg-dark-secondary;
 }
 
+* {
+  scrollbar-width: thin;
+}
+
 input {
     @apply bg-white dark:bg-dark-secondary p-2 outline-none focus:outline-none;
 }
@@ -23,6 +27,10 @@ button {
 
 h1 {
     @apply font-bold text-xl;
+}
+
+h3 {
+  @apply text-5xl
 }
 
 .thumbnail {
@@ -41,6 +49,16 @@ button.special {
     @apply rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 transition-all;
 }
 
+.create-tab-btn {
+  color: white;
+  background-color: #00000000;
+  font-size:38px;
+  padding: 5px 10px;
+}
+
+.create-tab-btn:hover div {
+  width: 100%;
+}
 
 .barlow-condensed-thin {
     font-family: "Barlow Condensed", sans-serif;

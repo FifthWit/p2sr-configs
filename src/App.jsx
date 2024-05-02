@@ -44,7 +44,7 @@ function App() {
     <>
       
       <Header configItemsTab={configItemsTab} createConfigsTab={createConfigsTab} homeTab={homeTab} />
-      <div className='absolute top-24'>
+      <div className='absolute top-24 w-screen'>
         {showConfigItems && <div className=''>
           <div className="w-screen bg-primary dark:bg-dark-primary">
             <div className="bg-secondary dark:bg-dark-secondary text-center flex flex-row">
@@ -56,9 +56,10 @@ function App() {
           
           <Configitems/>
         </div>}
-        {showCreateConfig && <div className=''>
-          <CreateConfig></CreateConfig>
+        {showCreateConfig && <div style={{width: "calc(100% - 200px)"}} className='ml-auto mr-auto'>
+            <CreateConfig></CreateConfig>
         </div>}
+        
       </div>
     </>
   );

@@ -31,6 +31,27 @@ export default function Header({ configItemsTab, createConfigsTab, homeTab }) {
         setShowSignIn(!showSignIn);
     };
 
+    useEffect(() => {
+        const searchInput = document.querySelector("#searchInp")
+
+        searchInput.addEventListener("input", ()=> {
+            updateSearch(searchInput.value)
+        })
+
+        function updateSearch(value) {
+            const searchables = document.querySelectorAll("[search]")
+            for (let i = 0; i < searchables.length; i++) {
+                const searchable = searchables[i]
+                const searchableText = searchable.getAttribute("search")
+                if (searchableText.toLowerCase().includes(value.toLowerCase())) {
+                    searchable.classList.remove("hidden")
+                } else {
+                    searchable.classList.add("hidden")
+                }
+            }
+        }
+    })
+
     return (
         <div className='barlow-condensed-semibold w-screen h-24 bg-white dark:bg-dark-primary border-b-4 border-b-secondary fixed z-50 top-0 flex'>
             <div className='flex items-center w-full z-30'>
@@ -41,7 +62,7 @@ export default function Header({ configItemsTab, createConfigsTab, homeTab }) {
                     <span className='barlow-condensed-semibold text-4xl uppercase hidden md:block dark:text-white text-black'>P2SR CONFIGS</span>
                 </div>
                 <div className='w-96 ml-7 rounded-xl overflow-hidden bg-dark-secondary hidden sm:flex'>
-                    <input placeholder='Search configs' className='barlow-condensed-semibold text-xl w-full placeholder:text-gray-400 placeholder:dark:text-dark-primary-alt bg-gray-200 dark:bg-dark-secondary' />
+                    <input id='searchInp' placeholder='Search configs' className='barlow-condensed-semibold text-xl w-full placeholder:text-gray-400 placeholder:dark:text-dark-primary-alt bg-gray-200 dark:bg-dark-secondary' />
                 </div>
                 <div style={{width: "500px"}} className='text-2xl uppercase ml-10 flex'>
                     <Icon onclick={configItemsTab} src={browse}>Browse Configs</Icon>
